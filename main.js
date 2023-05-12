@@ -716,7 +716,7 @@ function main(){
     ww[84].pos.z = -579;
     ww[84].pos.x = 12.5;
 
-    ww[85] = new Mesh(cloudv, cloudn, cloudu, standartFragmentShadergbr, flippedVertexShader, eng, new Uint8Array([0, 255, 0, 255]), parks, null, 1, 1, false, cubem);
+    ww[85] = new Mesh(cloudv, cloudn, cloudu, standartFragmentShadergbr, flippedVertexShader, eng, new Uint8Array([0, 255, 0, 255]), new Uint8Array([255, 255, 255, 255]), null, 1, 1, false, cubem);
     ww[85].pos.z = -530;
     ww[85].pos.x = 22.5;
     ww[85].pos.y = -22.5;
@@ -729,7 +729,7 @@ function main(){
     ww[86].pos.x = 22.5;
     ww[86].pos.y = 32.5;
 
-    ww[87] = new Mesh(cloudv, cloudn, cloudu, standartFragmentShadergbr, flippedVertexShader, eng, new Uint8Array([0, 255, 0, 255]), parks, null, 1, 1, false, cubem);
+    ww[87] = new Mesh(cloudv, cloudn, cloudu, standartFragmentShadergbr, flippedVertexShader, eng, new Uint8Array([0, 255, 0, 255]), new Uint8Array([255, 255, 255, 255]), null, 1, 1, false, cubem);
     ww[87].pos.z = -540;
     ww[87].pos.x = 2.5;
     ww[87].pos.y = -22.5;
@@ -779,6 +779,8 @@ function main(){
 
     var vasilew = new Mesh(vwv, vwn, vwu, pstandartFragmentShadergbr, flippedVertexShader, eng, vtex, null, null, vtexx, vtexy, true, cubem);
 
+    var sp = new Mesh(spv, spn, spu, standartFragmentShadergbr, flippedVertexShader, eng, gh1, null, null, gh1x, gh1y, false, cubem);
+
     //2.1200754923362317 -1.810000000000015 7.5226029737821944 
     //2.017223956227649 -1.810000000000015 24.79113506340336 
     //4.318600992229594 -1.7000000000000148 67.30141171884702 
@@ -793,38 +795,51 @@ function main(){
 
     function drawFrame(now){
         if(eng.pos.z < 7){
-            vasilei.pos = new vec3(-2.12, 0, -7.522);
+            vasilei.pos = new vec3(-0.5, 0, -7.522);
+            sp.pos = new vec3(1, 3.7, -7.522);
+            sp.rot.y = 1.5708;
+            sp.rot.z = 1.5708;
         }else if(eng.pos.z > 7 && eng.pos.z < 24){
             vasilei.pos = new vec3(-2.12, 0, -24.79);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 24 && eng.pos.z < 67){
             vasilei.pos = new vec3(-4.31, 0, -67.3);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 67 && eng.pos.z < 104){
             vasilei.pos = new vec3(13.11, 0, -104.53);
             vasilei.rot.y = 1.5708;
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 104 && eng.pos.z < 208){
             vasilei.rot.y = 0;
             vasilei.pos = new vec3(9.24, 0, -208.17);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 208 && eng.pos.z < 262){
             vasilei.rot.y = 1.5708;
             vasilei.pos = new vec3(16.52, 0, -262.76);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 262 && eng.pos.z < 286){
             vasilei.rot.y = 0;
             vasilei.pos = new vec3(10.31, 0, -286.47);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 286 && eng.pos.z < 397){
             vasilei.pos = new vec3(15.95, 0, -397.47);
             vasilei.rot.y = 1.5708;
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 307 && eng.pos.z < 438){
             vasilei.pos = new vec3(8.89, 0, -438.47);
             vasilei.rot.y = 0;
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 438 && eng.pos.z < 484){
             vasilei.pos = new vec3(10.07, 0, -484.36);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }else if(eng.pos.z > 484 && eng.pos.z < 579){
             vasilei.pos = new vec3(9.84, 0, -579.79);
+            sp.pos = new vec3(1, 1.7, -700.522);
         }
         eng.setLight(0, new vec3(0, 1, 1), new vec3(1, 1, 1), 1);
         eng.useorthosh = true;
         eng.sfar = 200.0;
-        eng.sfov = 30.0;
+        eng.sfov = 40.0;
         eng.shadowpos.z = -20.0;
         eng.shadowpos.y = -40.7;
         eng.shadowrot.y = 0.7;
@@ -881,7 +896,7 @@ function main(){
 
         if(eng.pos.z > 540 && ww[87].scale.x < 1.0){
             ww[88].pos.y -= 0.5;
-            if(ww[88].pos.y < -22 && ww[87].scale.x < 1.0){
+            if(ww[88].pos.y < -22 && ww[87].scale.x < 0.5){
                 ww[87].scale.z += 0.1;
                 ww[87].scale.x += 0.1;
                 ww[87].scale.y += 0.1;
@@ -890,7 +905,7 @@ function main(){
 
         if(eng.pos.z > 530 && ww[85].scale.x < 1.0){
             ww[86].pos.y -= 0.5;
-            if(ww[86].pos.y < -22 && ww[85].scale.x < 1.0){
+            if(ww[86].pos.y < -22 && ww[85].scale.x < 0.5){
                 ww[85].scale.z += 0.1;
                 ww[85].scale.x += 0.1;
                 ww[85].scale.y += 0.1;
@@ -914,6 +929,7 @@ function main(){
         }
 
         vasilei.Draw(eng);
+        sp.Draw(eng);
 
         eng.beginFrame();
 
@@ -928,6 +944,7 @@ function main(){
         }
 
         vasilei.Draw(eng);
+        sp.Draw(eng);
 
         eng.setLight(0, new vec3(2.4813325914117295, 3, -105.29181850063065), new vec3(1, 1, 1), 0);
         eng.useorthosh = false;
