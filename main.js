@@ -40,6 +40,22 @@ function main(){
                 eng.pos.x -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
                 eng.pos.z -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
             }
+            if (event.key == "W") {
+                eng.pos.z += Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
+                eng.pos.x -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
+            }
+            if (event.key == "A") {
+                eng.pos.x += Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
+                eng.pos.z += Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
+            }
+            if (event.key == "S") {
+                eng.pos.z -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
+                eng.pos.x += Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
+            }
+            if (event.key == "D") {
+                eng.pos.x -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
+                eng.pos.z -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
+            }
             if (event.key == "1") {
                 console.log(eng.pos.x+" "+eng.pos.y+" "+eng.pos.z+" "+eng.rot.x+" "+eng.rot.y);
             }
