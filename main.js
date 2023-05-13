@@ -24,35 +24,19 @@ function main(){
     eng.setLight(0, new vec3(0, 1, 1), new vec3(1, 1, 1), 1);
     function key_callback(){
         document.addEventListener('keydown', function(event) {
-            if (event.key == "w") {
+            if (event.key == "w" || event.key == "W") {
                 eng.pos.z += Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
                 eng.pos.x -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
             }
-            if (event.key == "a") {
+            if (event.key == "a" || event.key == "A") {
                 eng.pos.x += Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
                 eng.pos.z += Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
             }
-            if (event.key == "s") {
+            if (event.key == "s" || event.key == "S") {
                 eng.pos.z -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
                 eng.pos.x += Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
             }
-            if (event.key == "d") {
-                eng.pos.x -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
-                eng.pos.z -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
-            }
-            if (event.key == "W") {
-                eng.pos.z += Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
-                eng.pos.x -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
-            }
-            if (event.key == "A") {
-                eng.pos.x += Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
-                eng.pos.z += Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
-            }
-            if (event.key == "S") {
-                eng.pos.z -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
-                eng.pos.x += Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
-            }
-            if (event.key == "D") {
+            if (event.key == "d" || event.key == "D") {
                 eng.pos.x -= Math.cos(eng.rot.y) * Math.cos(eng.rot.x) * speed;
                 eng.pos.z -= Math.cos(eng.rot.y) * Math.sin(eng.rot.x) * speed;
             }
