@@ -102,7 +102,7 @@ function main(){
     skybox.scale.y = 1000;
     skybox.scale.z = 1000;
 
-    var ww = new Array(94);
+    var ww = new Array(95);
 
     ww[0] = new Mesh(parkv, parkn, parku, standartFragmentShadergbr, standartVertexShader, eng, parkt, parks, null, 512, 512, true, cubem);
     ww[1] = new Mesh(parkv, parkn, parku, standartFragmentShadergbr, standartVertexShader, eng, parkt, parks, null, 512, 512, true, cubem);
@@ -772,7 +772,12 @@ function main(){
     ww[93].pos.x = 12.5;
     ww[93].rot.x = -1.5708;
 
-    const wwr = 94;
+    ww[94] = new Mesh(planev, planen, planeu, pstandartFragmentShadergbr, flippedVertexShader, eng, tut, null, paptex, tutx, tuty, false, cubem);
+    ww[94].pos.z = -1;
+    ww[94].pos.y = 1.5708;
+    ww[94].rot.x = -1.5708;
+
+    const wwr = 95;
 
     var vasilei = new Mesh(viv, vin, viu, pstandartFragmentShadergbr, flippedVertexShader, eng, vtex, null, null, vtexx, vtexy, true, cubem);
     vasilei.scale = new vec3(0.7, 0.7, 0.7);
